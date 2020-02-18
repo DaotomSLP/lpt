@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Top_nav from "./nav/top";
+import Left_nav from "./nav/left";
+import Body from "./body/index";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handle_show_leftnav = this.handle_show_leftnav.bind(this);
+    this.state = { left_nav_visible: true };
+  }
+  handle_show_leftnav = () => {
+    this.setState({ left_nav_visible: !this.state.left_nav_visible });
+  };
+
+  render() {
+    var left_nav_visible = this.state.left_nav_visible;
+    return (
+      <div>
+        <Top_nav props={this.handle_show_leftnav} />
+        <div className="columns">
+          {left_nav_visible ? (
+            <div className="column is-2">
+              <Left_nav />
+            </div>
+          ) : (
+            <div></div>
+          )}
+          <div className="column is-10">
+            <Body />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
