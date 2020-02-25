@@ -3,3 +3,108 @@
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "@fortawesome/fontawesome-free/scss/regular";
 @import "@fortawesome/fontawesome-free/scss/brands";
+@import "node_modules/bulma/bulma.sass";
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto/Roboto-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto/Roboto-RegularItalic.ttf');
+    font-style: italic;
+}
+
+body {
+    min-height: 500px;
+    height: 100vh;
+}
+
+input {
+    box-shadow: none !important;
+}
+
+#wrapper-content,
+#wrapper-content * {
+    font-family: Roboto !important;
+}
+
+#wrapper-container {
+    height: 100%;
+}
+
+#wrapper-row {
+    margin: 0;
+    min-height: 100%;
+}
+
+
+#wrapper-sidebar {
+    background-color: $dark;
+
+    width: 100%;
+    padding-top: 5px;
+}
+
+#wrapper-sidebar.is-active {
+    background-color: $dark;
+}
+
+#wrapper-sidebar .sidebar-navlink {
+    height: auto;
+    border-radius: 0;
+    border: 0;
+    align-self: center;
+}
+
+#wrapper-sidebar .sidebar-navlink:focus {
+    outline: none;
+}
+
+@media screen and (max-width: $tablet) {
+    #wrapper-sidebar {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: $tablet) {
+
+    #wrapper-sidebar {
+        display: block;
+        min-width: 100px;
+        max-width: 100px;
+    }
+
+}
+
+#more-menu-search .dropdown-menu {
+    display: none;
+    min-width: 15rem;
+}
+
+#more-menu-search .dropdown-menu .dropdown-item .columns .column {
+    min-height: 60px;
+    padding: 10px;
+    text-align: center;
+    border: 0.5px solid white;
+    cursor: pointer;
+}
+
+#more-menu-search .dropdown-menu .dropdown-item .columns .column:hover {
+    border: 0.5px solid #dbdbdb;
+}
+
+#search {
+    box-shadow: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding-left: 10px
+}

@@ -13,7 +13,17 @@ class Page_control extends Component {
     if (this.state.page_font_rear === "r") {
       return (
         <>
-          <a className="pagination-previous">Previous</a>
+          <a
+            className="pagination-previous"
+            onClick={() =>
+              this.props.handle_select_page(
+                this.props.count,
+                this.props.page - 1
+              )
+            }
+          >
+            Previous
+          </a>
           <a className="pagination-next" disabled>
             Next page
           </a>
@@ -25,14 +35,44 @@ class Page_control extends Component {
           <a className="pagination-previous" disabled>
             Previous
           </a>
-          <a className="pagination-next">Next page</a>
+          <a
+            className="pagination-next"
+            onClick={() =>
+              this.props.handle_select_page(
+                this.props.count,
+                this.props.page + 1
+              )
+            }
+          >
+            Next page
+          </a>
         </>
       );
     } else {
       return (
         <>
-          <a className="pagination-previous">Previous</a>
-          <a className="pagination-next">Next page</a>
+          <a
+            className="pagination-previous"
+            onClick={() =>
+              this.props.handle_select_page(
+                this.props.count,
+                this.props.page - 1
+              )
+            }
+          >
+            Previous
+          </a>
+          <a
+            className="pagination-next"
+            onClick={() =>
+              this.props.handle_select_page(
+                this.props.count,
+                this.props.page + 1
+              )
+            }
+          >
+            Next page
+          </a>
         </>
       );
     }
